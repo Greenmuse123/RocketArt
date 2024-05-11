@@ -1,0 +1,301 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .rocket {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    transform-style: preserve-3d;
+    
+  }
+  
+  .body {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    background-color: #f5f5f5;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translateZ(20px);
+    background-image: linear-gradient(45deg, #f5f5f5, #e0e0e0);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .stripe {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: #ff0000;
+  }
+  
+  .stripe-1 {
+    top: 60px;
+    border-radius: 20px;
+  }
+  
+  .stripe-2 {
+    top: 120px;
+  }
+  
+  .window {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #00bfff;
+    border-radius: 50%;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(21px);
+    background-image: radial-gradient(circle, #ffffff 20%, #00bfff 60%);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+    animation: blink 1s infinite;
+  }
+  
+  .booster {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background-color: #8b0000;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%) rotateX(90deg);
+    border-radius: 50%;
+    background-image: radial-gradient(circle, #ff0000 20%, #8b0000 60%);
+  }
+  
+  .fin {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background-color: #f5f5f5;
+    bottom: 20px;
+    transform: translateZ(10px);
+    background-image: linear-gradient(45deg, #f5f5f5, #e0e0e0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .fin-left {
+    left: -30px;
+    transform: skewY(30deg);
+  }
+  
+  .fin-right {
+    right: -30px;
+    transform: skewY(-30deg);
+  }
+  
+  .exhaust {
+    position: absolute;
+    width: 40px;
+    height: 150px;
+    background-color: #ffa500;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(45deg, #ffa500, #ff0000);
+    animation: exhaust 0.2s infinite;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+  }
+  
+  .flame {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: #ffff00;
+    bottom: 0;
+    border-radius: 50%;
+    transform: rotateX(90deg);
+    background-image: radial-gradient(circle, #ffff00 20%, #ffa500 60%);
+    animation: flicker 0.1s infinite;
+  }
+  
+  .shadow {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: -20px;
+    transform: rotateX(90deg);
+    filter: blur(10px);
+  }
+  
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #ffffff 1%, transparent 1%);
+    background-size: 200px 200px;
+    animation: stars 3s linear infinite;
+    opacity: 0.7;
+  }
+  
+  .planets {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    animation: orbit linear infinite;
+  }
+  
+  .planet-1 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 20%;
+    background-image: url('images/Terran.png');
+    animation-duration: 20s;
+  }
+  
+  .planet-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    left: 80%;
+    background-image: url('images/moon/1.png');
+    animation-duration: 30s;
+  }
+  
+  .planet-3 {
+    width: 180px;
+    height: 180px;
+    top: 40%;
+    left: 50%;
+    background-image: url('images/Black_hole.png');
+    animation-duration: 40s;
+  }
+  
+  .control-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .control-panel h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .control-panel p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .launch-btn {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .launch-btn:hover {
+    background-color: #ff5500;
+  }
+  
+  .rocket.launch {
+    animation: warpDrive 8s linear;
+  }
+  
+  @keyframes warpDrive {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-1500px) scale(0.05);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes exhaust {
+    0% {
+      height: 150px;
+    }
+    50% {
+      height: 180px;
+    }
+    100% {
+      height: 150px;
+    }
+  }
+  
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes stars {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 200px 200px;
+    }
+  }
+  
+  @keyframes orbit {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+  }
